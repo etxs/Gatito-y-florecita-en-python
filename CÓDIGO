@@ -1,0 +1,98 @@
+import matplotlib.pyplot as plt
+
+# Crear la figura y el eje
+figura, eje = plt.subplots(figsize=(6, 6))
+
+# coordenadas de la nube
+coordenadas_nube = [
+    (-8, 10), (-7, 11), (-6, 10), (-7.5, 9.5), (-6.5, 9.5), (-8.5, 9.5)
+]
+
+# círculos d la nube
+for x, y in coordenadas_nube:
+    circulo = plt.Circle((x, y), 0.8, color='lightblue', alpha=0.8)
+    eje.add_artist(circulo)
+
+# cuerpo del michi
+cuerpo_x = [3, 5, 7, 3]
+cuerpo_y = [0, 6, 0, 0]
+eje.fill(cuerpo_x, cuerpo_y, color='orange', edgecolor='brown')
+
+# cabeza
+cabeza_x = [5, 4, 5, 6, 5]
+cabeza_y = [6, 7, 8, 7, 6]
+eje.fill(cabeza_x, cabeza_y, color='orange', edgecolor='brown')
+
+# orejillas
+oreja_izquierda_x = [4, 4.5, 5]
+oreja_izquierda_y = [8, 9, 8]
+eje.fill(oreja_izquierda_x, oreja_izquierda_y, color='orange', edgecolor='brown')
+
+oreja_derecha_x = [5, 5.5, 6]
+oreja_derecha_y = [8, 9, 8]
+eje.fill(oreja_derecha_x, oreja_derecha_y, color='orange', edgecolor='brown')
+
+# cola del gato
+cola_x = [6, 7, 6, 5, 6]
+cola_y = [0, -1, -2, -1, 0]
+eje.fill(cola_x, cola_y, color='orange', edgecolor='brown')
+
+# bigotines
+eje.plot([4, 3], [7.5, 7], color='black', lw=2)  # Bigote izquierdo superior
+eje.plot([4, 3], [7, 6.5], color='black', lw=2)  # Bigote izquierdo inferior
+eje.plot([6, 7], [7.5, 7], color='black', lw=2)  # Bigote derecho superior
+eje.plot([6, 7], [7, 6.5], color='black', lw=2)  # Bigote derecho inferior
+
+# Dibujar los ojos
+ojo_izquierdo = plt.Circle((4.5, 7.5), 0.1, color='white', ec='black')
+eje.add_artist(ojo_izquierdo)
+ojo_derecho = plt.Circle((5.5, 7.5), 0.1, color='white', ec='black')
+eje.add_artist(ojo_derecho)
+
+# patas del gato
+pata_izquierda_delantera = plt.Circle((3.5, 0.5), 0.2, color='orange', ec='brown')
+eje.add_artist(pata_izquierda_delantera)
+
+pata_derecha_delantera = plt.Circle((6.5, 0.5), 0.2, color='orange', ec='brown')
+eje.add_artist(pata_derecha_delantera)
+
+pata_izquierda_trasera = plt.Circle((3.8, 2.5), 0.2, color='orange', ec='brown')
+eje.add_artist(pata_izquierda_trasera)
+
+pata_derecha_trasera = plt.Circle((6, 2.5), 0.2, color='orange', ec='brown')
+eje.add_artist(pata_derecha_trasera)
+
+# flor
+tallo_x = [-7.5, -7.5, -6.5, -6.5, -7.5]
+tallo_y = [0, 6, 6, 0, 0]
+eje.fill(tallo_x, tallo_y, color='green', edgecolor='black')
+
+# petalos
+petalo1_x = [-7.5, -7.5, -6.5, -6.5, -7.5]
+petalo1_y = [6, 7, 7, 6, 6]
+eje.fill(petalo1_x, petalo1_y, color='purple', edgecolor='black')
+
+petalo2_x = [-7, -7, -6, -6, -7]
+petalo2_y = [6.5, 7.5, 7.5, 6.5, 6.5]
+eje.fill(petalo2_x, petalo2_y, color='purple', edgecolor='black')
+
+petalo3_x = [-7.5, -7.5, -6.5, -6.5, -7.5]
+petalo3_y = [7, 8, 8, 7, 7]
+eje.fill(petalo3_x, petalo3_y, color='purple', edgecolor='black')
+
+petalo4_x = [-8, -8, -7, -7, -8]
+petalo4_y = [6.5, 7.5, 7.5, 6.5, 6.5]
+eje.fill(petalo4_x, petalo4_y, color='purple', edgecolor='black')
+
+#centro de la flor
+centro_x = [-7.25, -7.25, -6.75, -6.75, -7.25]
+centro_y = [6.5, 7, 7, 6.5, 6.5]
+eje.fill(centro_x, centro_y, color='yellow', edgecolor='black')
+
+eje.set_xlim(-10, 10)
+eje.set_ylim(-4, 14)
+eje.set_aspect('equal')
+eje.set_title('Gato y flor :3')
+eje.grid(True)
+
+plt.show()
